@@ -1,0 +1,24 @@
+Utilité
+
+L'application servira à la logistique lors de la création de cosplay
+Elle pourra permettre de séparer le cosplay en divers éléments, comme des bottes, les armes, etc...
+Les éléments du cosplay, eux, ont différentes caractéristiques comme les matériaux, les couleurs, etc...
+Il y a possibilité d'établir une liste d'objectifs pour chaque élément, donnant lieu à une barre de progression
+Ainsi, mettont que la veste d'un personnage doit être cousue, puis qu'il faut broder un motif, on a bien cousue
+la veste, mais le motif n'est pas encore entamé, l'appli va donc indiquer que la veste est à 50%.
+
+Il pourrait y avoir un système de recherche de patron pour certains cosplays, l'idée pourrait être de trouver des 
+patrons, payant ou non, sur le net, un système d'ajout de patrons par les users pourrait être réfléchi, mais il 
+faudrait des systèmes de vérifications pour éviter les faux patrons (vérif par IA ?)
+
+L'IA pourrait aussi servir pour conseiller certains matériaux, en fonction des photos de la pièce, ainsi, en lui 
+proposant une veste, elle pourrait nous dire, selon le drapé, et les attributs recherchés (souple, rigide, etc...)
+, des informations que l'utilisateur apportera, quels tissus seraient optimaux pour la veste
+
+Ainsi, pour chaque utilisateur, le menu donnerait d'abord sur la liste des cosplans
+il y aura donc : le nom, une image de référence, la jauge de complétion et la liste des éléments
+
+pour les éléments, il faudrait alors la liste des matériaux nécessaires, la liste des tâches ainsi que la jauge 
+d'avancée du dit élément, à savoir qu'il sera possible de valider ou invalider la complétion de chacune des tâches
+, en fonction du nombre de tâches validés, le pourcentage de complétion de l'élément serait automatiquement mis à
+jour
