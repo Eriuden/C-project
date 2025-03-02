@@ -6,7 +6,7 @@ require("./Config/db")
 const {checkUser, requireAuth} = require("./middleware/auth.middleware")
 const cors = require("cors")
 
-const articleRoutes = require("./Routes/article.route")
+const cosplanRoutes = require("./Routes/cosplan.route")
 const userRoutes = require("./Routes/user.route")
 
 const app = express()
