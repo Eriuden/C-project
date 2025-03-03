@@ -47,10 +47,11 @@ const cosplanSchema = new mongoose.Schema(
         parts: {
             type: [
                 {
+                    cosplanId:String,
                     partsPicture: String,
                     partsName: String,
                     materials: String,
-                    Instruction: String,
+                    instruction: String,
                 }
             ],
             required: true,
