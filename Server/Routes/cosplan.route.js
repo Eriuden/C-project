@@ -12,8 +12,8 @@ router.post("/upload-cosplanPic", upload.single("file"), uploadController.upload
 router.post("/upload-partPic", upload.single("file"), uploadController.uploadPartPic)
 
 
-router.patch("/comment-article/:id", cosplanController.createPart)
-router.patch("/edit-part/:id", cosplanController.editPart)
-router.patch("/delete-part/:id", cosplanController.deletePart)
+router.patch("/create-part/:id", cosplanController.partsOfCosplan)
+router.patch("/edit-part/:id", cosplanController.editPartsOfCosplan)
+router.patch("/delete-part/:id", cosplanController.deletePartsOfCosplan)
 
 module.exports = router
