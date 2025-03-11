@@ -4,8 +4,6 @@ export const GET_USER = "GET_USER"
 export const UPDATE_USER = "UPDATE_USER"
 export const UPDATE_PASSWORD = "UPDATE_PASSWORD"
 export const DELETE_USER = "DELETE_USER"
-export const FOLLOW_USER= "FOLLOW_USER"
-export const UNFOLLOW_USER= "UNFOLLOW_USER"
 
 type userProps = {
     userId: string,
