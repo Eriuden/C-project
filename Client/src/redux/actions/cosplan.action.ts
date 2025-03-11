@@ -4,7 +4,8 @@
 import axios from "axios"
 
 export const GET_COSPLAN = "GET_COSPLAN"
-export const GET_ALL_COSPLANS= "GET_ALL_COSPLANS"
+export const GET_ALL_COSPLANS = "GET_ALL_COSPLANS"
+export const GET_COSPLANS_ERROR = "GET_COSPLANS_ERROR ="
 export const ADD_COSPLAN = "ADD_COSPLAN"
 export const UPDATE_COSPLAN = "UPDATE_COSPLAN"
 export const DELETE_COSPLAN = "DELETE_COSPLAN"
@@ -33,7 +34,7 @@ type partProps = {
 
 export const getCosplans = (num:any, dispatch: any) => {
     return axios
-    .get(`${process.env.REACT_APP_API_URL}api/post/`)
+    .get(`${process.env.REACT_APP_API_URL}api/cosplan/`)
     .then((res) => {
         const array = res.data.slice(0, num)
         dispatch ({type:GET_COSPLAN, payload: array})
@@ -42,4 +43,40 @@ export const getCosplans = (num:any, dispatch: any) => {
     .catch((err)=> {
         console.log(err)
     })
+}
+
+export const addCosplan = (data:any, dispatch:any) => {   
+    return axios
+    .post(`${process.env.REACT_APP_API_URL}api/cosplan/`, data)
+    .then((res) => {
+        if (res.data.errors) {
+            dispatch( {type: GET_COSPLANS_ERROR, payload: res.data.errors })
+        } else {
+            dispatch({ type: GET_COSPLANS_ERROR, payload: ""})
+        }
+    })
+}
+
+export const updateCosplan = ({cosplanId} : cosplanProps, name: string, licence:string, budget: string, requiredMaterials: [string], dispatch: any) => {   
+    return axios({
+        method: 'put',
+        url: `${process.env.REACT_APP_API_URL}api/cosplan/${cosplanId}`,
+        data:{name, licence, budget, requiredMaterials},
+    })
+    .then(() => {
+        dispatch({type: UPDATE_COSPLAN, payload: {name, licence, budget, requiredMaterials}})
+    })
+    .catch((err) => console.log(err))
+}
+
+export const deleteCosplan = ({cosplanId, picture, name, licence, budget, requiredMaterials}: cosplanProps, dispatch:any) => {
+    return axios({
+        method: 'delete',
+        url: `${process.env.REACT_APP_API_URL}api/cosplan/${cosplanId}`,
+        data:{cosplanId, picture, name, licence, budget, requiredMaterials},
+    })
+    .then(() => {
+        dispatch({ type: DELETE_COSPLAN, payload: {cosplanId} })
+    })
+    .catch((err) => console.log(err))
 }
