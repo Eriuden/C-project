@@ -80,3 +80,15 @@ export const deleteCosplan = ({cosplanId, picture, name, licence, budget, requir
     })
     .catch((err) => console.log(err))
 }
+
+export const addCosplanPart = (cosplanId: string , {partPicture, partName, material, instruction}: partProps, dispatch:any) => {
+    return axios({
+        method: 'patch',
+        url: `${process.env.REACT_APP_API_URL}api/cosplan/add-cosplan-part/${cosplanId}`,
+        data:{partPicture, partName, material, instruction},
+    })
+    .then(() => {
+        dispatch({ type: ADD_COSPLAN_PART, payload: {cosplanId} })
+    })
+    .catch((err) => console.log(err))
+}
