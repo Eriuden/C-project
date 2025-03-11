@@ -92,3 +92,27 @@ export const addCosplanPart = (cosplanId: string , {partPicture, partName, mater
     })
     .catch((err) => console.log(err))
 }
+
+export const editCosplanPart = (cosplanId:string, partId:string, partPicture: string, partName: string, material: [string], instruction: string, dispatch: any) => {
+    return axios({
+        method: 'patch',
+        url: `${process.env.REACT_APP_API_URL}api/cosplan/edit-cosplan-part/${cosplanId}`,
+        data:{partId, partPicture, partName, material, instruction},
+    })
+    .then(() => {
+        dispatch({ type: EDIT_COSPLAN_PART, payload: {cosplanId, partId, partPicture, partName, material, instruction} })
+    })
+    .catch((err) => console.log(err))
+}
+
+export const deleteCosplanPart = (cosplanId:string ,partId:string, partPicture: string, partName: string, material: [string], instruction: string,dispatch:any) => {
+    return axios({
+        method: 'patch',
+        url: `${process.env.REACT_APP_API_URL}api/cosplan/delete-cosplan-part/${cosplanId}`,
+        data:{partPicture, partName, material, instruction},
+    })
+    .then(() => {
+        dispatch({ type: DELETE_COSPLAN_PART, payload: {cosplanId, partId} })
+    })
+    .catch((err) => console.log(err))
+}
