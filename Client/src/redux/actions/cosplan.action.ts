@@ -5,7 +5,7 @@ import axios from "axios"
 
 export const GET_COSPLAN = "GET_COSPLAN"
 export const GET_ALL_COSPLANS = "GET_ALL_COSPLANS"
-export const GET_COSPLANS_ERROR = "GET_COSPLANS_ERROR ="
+export const GET_COSPLANS_ERRORS = "GET_COSPLANS_ERRORS"
 export const ADD_COSPLAN = "ADD_COSPLAN"
 export const UPDATE_COSPLAN = "UPDATE_COSPLAN"
 export const DELETE_COSPLAN = "DELETE_COSPLAN"
@@ -50,9 +50,9 @@ export const addCosplan = (data:any, dispatch:any) => {
     .post(`${process.env.REACT_APP_API_URL}api/cosplan/`, data)
     .then((res) => {
         if (res.data.errors) {
-            dispatch( {type: GET_COSPLANS_ERROR, payload: res.data.errors })
+            dispatch( {type: GET_COSPLANS_ERRORS, payload: res.data.errors })
         } else {
-            dispatch({ type: GET_COSPLANS_ERROR, payload: ""})
+            dispatch({ type: GET_COSPLANS_ERRORS, payload: ""})
         }
     })
 }
