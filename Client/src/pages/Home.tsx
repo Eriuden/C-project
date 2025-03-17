@@ -1,10 +1,10 @@
-import CosplanCard from "../components/CosplanCard"
+import { CosplanCard } from "../components/CosplanCard"
 import { isEmpty } from "../utils"
 import { useSelector } from "react-redux";
 import { useState, useContext } from "react";
 import { UidContext } from "../AppContext";
 
-const Home = () => {
+ export const Home = () => {
 
   const [isChecked, setisChecked] = useState(false)
   const cosplans = useSelector((state:any) => state.cosplanReducer);
@@ -34,5 +34,3 @@ const Home = () => {
      
   )
 }
-
-export default Home

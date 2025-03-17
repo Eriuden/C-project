@@ -1,7 +1,9 @@
-export const cosplanPartCard = () => {
+export const CosplanPage = () => {
   return (
     <div>
       
     </div>
   )
 }
+
+
