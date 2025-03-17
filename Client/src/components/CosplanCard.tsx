@@ -1,5 +1,5 @@
 
-const CosplanCard = () => {
+const CosplanCard = ({cosplanProps}) => {
   return (
     <div>
       
