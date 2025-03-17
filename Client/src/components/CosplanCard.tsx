@@ -1,5 +1,3 @@
-//Il faut un button pour afficher la page du cosplan avec les cards des parts
-
 import { Link } from "react-router-dom"
 
 type cosplanPropsType = {
@@ -10,7 +8,7 @@ type cosplanPropsType = {
   budget: string,
   requiredMaterials: string
 }
-const CosplanCard = (cosplanProps :cosplanPropsType) => {
+ export const CosplanCard = (cosplanProps :cosplanPropsType) => {
   return (
     <div>
       <Link className='w-[100%] text-center m-auto text-black' to={"/cosplan"}>
@@ -24,4 +22,3 @@ const CosplanCard = (cosplanProps :cosplanPropsType) => {
   )
 }
 
-export default CosplanCard
