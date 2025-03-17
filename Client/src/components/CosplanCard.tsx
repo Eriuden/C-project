@@ -13,7 +13,13 @@ type cosplanPropsType = {
 const CosplanCard = (cosplanProps :cosplanPropsType) => {
   return (
     <div>
-      <Link className='w-[100%] text-center m-auto text-black' to={"/cosplan"}>Vos conseils</Link>
+      <Link className='w-[100%] text-center m-auto text-black' to={"/cosplan"}>
+        <div>
+          <h2>{cosplanProps.name}</h2>
+          <img src={cosplanProps.picture}/>
+        </div>
+      </Link>
+      
     </div>
   )
 }
