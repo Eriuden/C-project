@@ -24,7 +24,7 @@ export const cosplanPartCard = (cosplan: any) => {
         .then(() => getCosplans(cosplan, dispatch))
         .then(() => setPartName(""));
     }
-  };
+  }; 
 
   return (
     <div>
