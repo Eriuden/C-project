@@ -12,7 +12,7 @@ const [budget, setBudget] = useState("")
 const [requiredMaterials, setRequiredMaterials] = useState([""])
 
 const userData= useSelector((state:any) => state.userReducer)
-const errors = useSelector((state:any) => state.errorReducer.postError)
+const errors = useSelector((state:any) => state.errorReducer.cosplanError)
 const dispatch = useDispatch()
 
 const handlePicture = (e:any) => {
@@ -49,7 +49,7 @@ const cancelNewCosplan = () => {
            bg-gradient-to-r from-slate-300 via-slate-400 to-slate-300
            my-4 md:mx-[20%] lg:mx-[20%]">
 
-              <label htmlFor='name' className='mt-2 text-center text-black font-serif'>Votre nom</label>
+              <label htmlFor='name' className='mt-2 text-center text-black font-serif'>Le nom du cosplay</label>
               <input className='border-2 border-black mx-12 sm:mx-52 md:mx-[30%]
               lg:mx-[30%]' type="text" name='name' value={name} 
               onChange={(e)=> setName(e.target.value)}/>
@@ -64,26 +64,27 @@ const cancelNewCosplan = () => {
                         lg:mx-[30%]' type="file" name='picture' value={picture} 
                         onChange={(e)=> handlePicture(e)}/>
                         <div className='picture error'></div>
+
+                        {!isEmpty(errors.format) && <p>{errors.format}</p>}
+                        {!isEmpty(errors.maxSize) && <p>{errors.maxSize}</p>}  
                     </>
-                    
-                )}
-                
+                  
+                )}                
               </div>
               
-
-              <label htmlFor='licence' className='mt-2 text-center text-black font-serif'>Votre adresse</label>
+              <label htmlFor='licence' className='mt-2 text-center text-black font-serif'>La licence/l'univers</label>
               <input className='border-2 border-black mx-12 sm:mx-52 md:mx-[30%]
               lg:mx-[30%]' type="text" name='licence' value={licence} 
               onChange={(e)=> setLicence(e.target.value)}/>
               <div className='licence error'></div>
 
-              <label htmlFor='budget' className='mt-2 text-center text-black font-serif'>Votre mot de passe</label>
+              <label htmlFor='budget' className='mt-2 text-center text-black font-serif'>Le budget prévu</label>
               <input className='border-2 border-black mx-12 sm:mx-52 md:mx-[30%]
               lg:mx-[30%]' type='text' name='budget' value={budget} 
               onChange={(e)=> setBudget(e.target.value)}/>
               <div className='budget error'></div>
 
-              <label htmlFor='required-materials' className='mt-2 text-center text-black font-serif'>Confirmer votre mot de passe</label>
+              <label htmlFor='required-materials' className='mt-2 text-center text-black font-serif'>Les matériaux requis</label>
               <input className='border-2 border-black mx-12 sm:mx-52 md:mx-[30%]
               lg:mx-[30%]' type='text' name='required-materials' value={requiredMaterials} 
               onChange={(e)=> setRequiredMaterials([e.target.value])}/>
