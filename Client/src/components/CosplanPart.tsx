@@ -55,21 +55,23 @@ export const CosplanPart = (cosplan: any) => {
               placeholder="Nom de la partie du cosplay"
             />
             <br />
-
-            {cosplanData.parts.materials.map((material:any)=>
+ 
               <input
               type="text"
               name="materials"
               onChange={(e) => {
-                const updatedMaterials = [...materials]
-                updatedMaterials[material] = e.target.value
-                setMaterials(updatedMaterials) 
+                { cosplanData.parts.materials.map((material:any)=> {
+                    const updatedMaterials = [...materials]
+                    updatedMaterials[material] = e.target.value
+                    setMaterials(updatedMaterials)
+                }
+                )} 
               }
               }
-              value={materials[material]}
+              value={materials}
               placeholder="Nom de la partie du cosplay"
               />
-            )}                                     
+                                                
             <br/>
 
             <input
