@@ -8,7 +8,7 @@ export const CosplanPart = (cosplan: any) => {
   type appDispatch = () => any 
 
   const [partName, setpartName] = useState("")
-  const [materials, setMaterials] = useState([])
+  const [materials, setMaterials] = useState([""])
   const [instructions, setInstructions] = useState("")
 
   const cosplanData = useSelector((state:any) => state.cosplanReducer)
@@ -25,7 +25,7 @@ export const CosplanPart = (cosplan: any) => {
         .then(() => setpartName(""))
     }
   }
-  //Modifier la partie materials, cas encore jamais traité ici, du à l'array
+  //Premier essai pour l'input de materials, très expérimental
   return (
     <div>
       {cosplan.parts.map((part:any) => {
@@ -56,14 +56,21 @@ export const CosplanPart = (cosplan: any) => {
             />
             <br />
 
-            <input
+            {cosplanData.parts.materials.map((material:any)=>
+              <input
               type="text"
               name="materials"
-              onChange={(e) => setMaterials(e.target.value)}
-              value={materials}
+              onChange={(e) => {
+                const updatedMaterials = [...materials]
+                updatedMaterials[material] = e.target.value
+                setMaterials(updatedMaterials) 
+              }
+              }
+              value={materials[material]}
               placeholder="Nom de la partie du cosplay"
-            />
-            <br />
+              />
+            )}                                     
+            <br/>
 
             <input
               type="text"
