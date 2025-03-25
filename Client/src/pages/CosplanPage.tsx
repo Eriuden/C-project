@@ -1,9 +1,9 @@
-import NewCosplanPart from "../components/NewCosplanPart"
+import { CosplanPart } from "../components/CosplanPart"
 
 export const CosplanPage = () => {
   return (
     <div>
-      <NewCosplanPart/>
+      <CosplanPart/>
     </div>
   )
 }
