@@ -93,14 +93,16 @@ export const addCosplanPart = (cosplanId: string , {partPicture, partName, mater
     .catch((err) => console.log(err))
 }
 
-export const editCosplanPart = (cosplanId:string, partId:string, partPicture: string, partName: string, material: [string], instruction: string, dispatch: any) => {
+// Créer un edit de la photo en parralèle
+
+export const editCosplanPart = (cosplanId:string, partId:string, partName: string, material: [string], instruction: string, dispatch: any) => {
     return axios({
         method: 'patch',
         url: `${process.env.REACT_APP_API_URL}api/cosplan/edit-cosplan-part/${cosplanId}`,
-        data:{partId, partPicture, partName, material, instruction},
+        data:{partId, partName, material, instruction},
     })
     .then(() => {
-        dispatch({ type: EDIT_COSPLAN_PART, payload: {cosplanId, partId, partPicture, partName, material, instruction} })
+        dispatch({ type: EDIT_COSPLAN_PART, payload: {cosplanId, partId, partName, material, instruction} })
     })
     .catch((err) => console.log(err))
 }
