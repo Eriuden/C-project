@@ -36,7 +36,7 @@ const Header = () => {
   return (
     <div className='bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 bg-cover'>
       <h1 className='text-gray-400 font-serif text-center'>
-        Metalibaba 
+        Cosplanning 
       </h1>
 
       <nav className='hidden sticky flex-row justify-around mt-2 sm:flex'>
