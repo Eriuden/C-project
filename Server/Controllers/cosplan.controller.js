@@ -103,7 +103,7 @@ module.exports.partsOfCosplan = (req,res) => {
                     parts: {
                         partsPicture: req.body.picture,
                         partsName: req.body.partsName,
-                        material: req.body.material,
+                        requiredMaterials: req.body.requiredMaterials,
                         instruction: req.body.instruction,
                     },
                 },

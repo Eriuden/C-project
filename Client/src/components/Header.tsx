@@ -8,7 +8,7 @@ import { ConnexionModal } from "./ConnexionModal";
 import { InscriptionModal} from "./InscriptionModal";
 import * as ReactModal from "react-modal"
 
-const Header = () => {
+export const Header = () => {
   const [hamburger, setHamburger] = useState(false)
   const [connexionModal, setConnexionModal] = useState(false)
   const [inscriptionModal, setInscriptionModal] = useState(false)
