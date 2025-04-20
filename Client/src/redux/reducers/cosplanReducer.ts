@@ -15,11 +15,12 @@ export const cosplanReducer = (state = initialState, action: any) => {
                    ...cosplan,
                    name: action.payload.name,
                    licence: action.payload.licence,
-                   budget: action.paylaod.budget
+                   budget: action.payload.budget,
+                   requiredMaterials: action.payload.requiredMaterials
                }
            } else return cosplan
         })
-        
+
       case DELETE_COSPLAN:
         return state.filter((cosplan:any) => cosplan._id !== action.payload.cosplanId)
 
