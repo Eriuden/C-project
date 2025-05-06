@@ -39,7 +39,7 @@ export const CosplanPart = (cosplan: any) => {
               })}
             </ul>
             <p>{cosplan.instruction}</p>
-            <EditDeleteCosplanPart/>
+            <EditDeleteCosplanPart {...part}/>
           </div>
         )
       })}

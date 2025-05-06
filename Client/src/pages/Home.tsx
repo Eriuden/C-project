@@ -23,7 +23,7 @@ import { NewCosplanForm } from "../components/NewCosplanForm";
             <NewCosplanForm/>
             {!isEmpty(cosplans[0]) &&
             cosplans.map((cosplan:any) => {
-              <CosplanCard cosplanProps={cosplan}/>
+              <CosplanCard {...cosplan}/>
               {!isChecked ? <button className="bg-green" onClick={setIsCheckedOrNot}>V</button>
               : <button className="bg-red">X</button>}
             })}       
